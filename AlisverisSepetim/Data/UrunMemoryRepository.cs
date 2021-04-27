@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlisverisSepetim.Data
 {
-    public class UrunRepository
+    public class UrunMemoryRepository
     {
         private List<Urun> urunler;
 
-        public UrunRepository()
+        public UrunMemoryRepository()
         {
             urunler = new List<Urun>
             {

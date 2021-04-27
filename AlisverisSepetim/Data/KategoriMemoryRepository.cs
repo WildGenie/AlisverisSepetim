@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlisverisSepetim.Data
 {
-    public class KategoriRepository
+    public class KategoriMemoryRepository
     {
         List<Kategori> kategoriler;
-        public KategoriRepository()
+        public KategoriMemoryRepository()
         {
             kategoriler = new List<Kategori>
             {

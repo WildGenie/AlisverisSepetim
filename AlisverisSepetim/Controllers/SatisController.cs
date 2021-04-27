@@ -9,12 +9,12 @@ namespace AlisverisSepetim.Controllers
 {
     public class SatisController : Controller
     {
-        KategoriRepository kategoriRepository;
-        UrunRepository urunRepository;
+        KategoriMemoryRepository kategoriRepository;
+        UrunMemoryRepository urunRepository;
         public SatisController()
         {
-            kategoriRepository = new KategoriRepository();
-            urunRepository = new UrunRepository();
+            kategoriRepository = new KategoriMemoryRepository();
+            urunRepository = new UrunMemoryRepository();
         }
         public IActionResult Urunler(int? kategoriId)
         {
