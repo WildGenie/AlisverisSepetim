@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Sepet>
+
+
+<h1>Sepet</h1>
+
+@if (TempData["Bilgi"] is string bilgi)
+{
+<div class="alert alert-secondary" role="alert">
+    @bilgi
+</div>
+}
+
+@foreach (var sepet in Model)
+{
+    <li>
+        <a asp-action="SepettenUrunSil" asp-route-id="@sepet.Id">@sepet.Urun.Ad (Miktar: @sepet.Miktar)</a>
+    </li>
+}

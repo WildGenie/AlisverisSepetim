@@ -2,18 +2,26 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-//string veri;
-//if (string.IsNullOrWhiteSpace(ViewBag.filtre))
-//    veri = ViewBag.filtre;
-//else
-//    veri = "";
+    //string veri;
+    //if (string.IsNullOrWhiteSpace(ViewBag.filtre))
+    //    veri = ViewBag.filtre;
+    //else
+    //    veri = "";
 
 }
 @model List<Urun>
 
 <h1>Ürünler @(string.IsNullOrWhiteSpace(ViewBag.filtre)?"": $"({ViewBag.filtre})") </h1>
 
+@if (TempData["Bilgi"] is string bilgi)
+{
+    <div class="alert alert-secondary" role="alert">
+        @bilgi
+    </div>
+}
+
+
 @foreach (var urun in Model)
 {
-    <li>@urun.Ad</li>
+    <li><a asp-action="SepeteUrunEkle" asp-route-urunId="@urun.Id">@urun.Ad</a></li>
 }
